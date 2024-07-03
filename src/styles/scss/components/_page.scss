@@ -1,0 +1,50 @@
+.page {
+  scroll-behavior: smooth;
+
+  &__body {
+    min-width: 320px;
+		max-width: 1600px;
+		margin: 0 auto;
+		font-family: "Tenor Sans", sans-serif;
+		font-weight: 400;
+		font-style: normal;
+
+    @include onDesktop {
+			z-index: -1;
+      display: grid;
+			grid-template: repeat(3, auto) / repeat(2, auto) ;
+			background: linear-gradient(to left, #ffffff 50%, #09074E 50%);
+    }
+  }
+
+  &__menu {
+		z-index: 10;
+    position: fixed;
+    top: 0;
+    right: 0;
+    transition: all $transitionDuration;
+    overflow: auto;
+    opacity: 0;
+    transform: translateY(-100%);
+		@include gradient;
+
+		@include onDesktop {
+			min-height: calc(100vh - 120px);
+      position: relative;
+			opacity: 1;
+      transform: none;
+			grid-row: 2 / 4;
+			grid-column: 1 / 2;
+    }
+
+    &--active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  &:has(.page__menu--active) {
+    overflow: hidden;
+  }
+	
+}

@@ -1,0 +1,35 @@
+@mixin onTablet {
+  @media (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin gradient {
+	background: linear-gradient(to right, #09074E, #2E1D7D);
+}
+
+@mixin arrow {
+	&:after {
+		position: absolute;
+		content: "";
+		background-image: url('../../icons/arrow.svg');
+		background-size: contain;
+		background-repeat: no-repeat;
+		display: inline-block;
+		width: 16.5px;
+		height: 10px;
+		top: 50%;
+		transform: translateY(-50%);
+		right: 18px;
+
+		@include onDesktop {
+			right: 30px;
+		}
+	}
+}

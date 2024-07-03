@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
+
+@import './mixins';
+@import './vars';
+
+@import './components/page';
+@import './components/header';
+@import './components/menu';
+@import './components/products';
+@import './components/card';
+@import './components/footer';
+
+* {
+	box-sizing: border-box;
+}
+
+.container {
+	margin: 0 auto;
+	padding-inline: 18px;
+
+	@include onTablet {
+    padding-inline: 35px;
+  }
+
+  @include onDesktop {
+    max-width: 1170px;
+    padding-inline: 45px;
+  }
+}

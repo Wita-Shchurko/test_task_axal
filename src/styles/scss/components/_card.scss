@@ -1,0 +1,39 @@
+.card {
+	cursor: pointer;
+	
+	&__icon {
+		display: block;
+		margin: 0 auto;
+		height: 60px;
+	}
+
+	&__name {
+		position: relative;
+		margin: 48px 0 0;
+		font-size: 16px;
+		line-height: 25px;
+		color: #2F2949;
+		transition: all $transitionDuration;
+
+		@include onDesktop {
+			margin-top: 85px;
+			font-size: 20px;
+		}
+	}
+
+	&__description {
+		display: block;
+		margin: 1px 0 0;
+		font-family: 'IBM Plex Sans';
+		font-weight: 400;
+		font-size: 13px;
+		line-height: 15px;
+		color: #777777;
+
+		@include onDesktop {
+			font-size: 16px;
+			margin-top: 5px;
+			line-height: 25px;
+		}
+	}
+}

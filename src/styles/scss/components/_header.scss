@@ -1,0 +1,98 @@
+.header {
+	position: relative;
+	z-index: 100;
+	min-height: 53px;
+	display: flex;
+	@include gradient;
+
+	@include onTablet {
+		min-height: 63px;
+	}
+
+	@include onDesktop {
+		height: 120px;
+	}
+
+	&__container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex: 1;
+
+		@include onDesktop {
+			padding-inline: 30px !important;
+		}
+	}
+	
+	&__img {
+		display: flex;
+		gap: 12px;
+
+		@include onDesktop {
+			gap: 20px;
+		}
+	}
+
+	&__logo {
+		height: 35px;
+		width: auto;
+
+		@include onDesktop {
+			height: 45px;
+		}
+	}
+
+	&__beta {
+		padding-top: 2px;
+		height: 16px;
+		width: auto;
+
+		@include onDesktop {
+			height: 20px;
+		}
+	}
+
+	&__menuBtn {
+		display: flex;
+		flex-direction: column;
+		align-items: end;
+		gap: 6px;
+		width: 30px;
+		height: 15px;
+
+		@include onDesktop {
+			display: none;
+		}
+
+		span {
+			background-color: #fff;
+			height: 1px;
+			width: 100%;
+
+			&:nth-child(2) {
+				width: 20px;
+			}
+	
+			&:nth-child(3) {
+				width: 26px;
+			}
+		}
+
+		&--active {
+			span {
+				&:nth-child(1) {
+					width: 26px;
+					transform: translateX(-5px) rotate(-45deg) translateY(10px);
+				}
+	
+				&:nth-child(2) {
+					opacity: 0;
+				}
+		
+				&:nth-child(3) {
+					transform: translateX(-5px) rotate(45deg) translateY(-10px);
+				}
+			}
+		}
+	}
+}
